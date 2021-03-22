@@ -335,7 +335,7 @@ const contractData = () => {
 const loadContract = async () => {
   contract = await customTronWeb.contract().at(contractAddress);
 	
-  startInterval(30, contractData);
+  startInterval(5, contractData);
 }; 
 
 const loadNewContract = async () => {
