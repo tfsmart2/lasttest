@@ -85,9 +85,9 @@ const HttpProvider = TronWeb.providers.HttpProvider;
 const fullNode = new HttpProvider('https://api.trongrid.io');
 const solidityNode = new HttpProvider('https://api.trongrid.io');
 const eventServer = 'https://api.trongrid.io/';
-//const privateKey = "E07FA44D864D5EC8DFF590C65E36029E28513DC2AF6CB345C772FFC857926DEC";
-const customTronWeb = new TronWeb(fullNode, solidityNode, eventServer);
-// const customTronWeb = new TronWeb(fullNode, solidityNode, eventServer,privateKey);
+const privateKey = "E07FA44D864D5EC8DFF590C65E36029E28513DC2AF6CB345C772FFC857926DEC";
+//const customTronWeb = new TronWeb(fullNode, solidityNode, eventServer);
+ const customTronWeb = new TronWeb(fullNode, solidityNode, eventServer,privateKey);
 customTronWeb.setHeader({"TRON-PRO-API-KEY": 'd2b51f45-c9cc-4e8c-a16e-9ff82dbe277d'});
 customTronWeb.setAddress(contractAddress);
 
