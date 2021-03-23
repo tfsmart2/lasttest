@@ -334,7 +334,7 @@ const contractData = () => {
 
 const loadContract = async () => {
   contract = await customTronWeb.contract().at(contractAddress);
-	
+	//30
   startInterval(15, contractData);
 }; 
 
@@ -344,7 +344,7 @@ const loadNewContract = async () => {
     showPopup('Connected to Tron LINK.', 'success');
     acctConnected = true;
     startInterval(10, accountData);
-    
+    //5
   } else {
     showPopup('Unable to Connect to your Account in Wallet.', 'error');
   }
