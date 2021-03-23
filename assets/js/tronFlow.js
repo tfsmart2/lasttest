@@ -326,7 +326,7 @@ const contractData = () => {
 //  getContractBalanceRate();
   getBalanceOfContract();
   getLastfive();
-  getTopfive(); 
+ // getTopfive(); 
 
   
 	
