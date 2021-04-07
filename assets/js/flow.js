@@ -471,11 +471,14 @@ const accountData = async () => {
   const userpayout = (invester.payoutSum.toNumber() / 1000000);
   $('#userpayout').text(userpayout.toFixed(2)); 
   const loss = totaldeposited - userpayout;
+	  let loss1;
 	  if (parseInt(loss) < 0 ){
-	  const loss1 = '0';
+	  loss1 = '0';
 	  } else {
-	   const loss1 = '1';
+	   loss1 = loss;
 	  }
+	  alert(loss);
+          alert(loss1);
 	  
 /* if ( parseFloat($('#alldeposited').text()) >  parseFloat($('#userpayout').text()) ){
 
