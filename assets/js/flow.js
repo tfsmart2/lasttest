@@ -470,7 +470,7 @@ const accountData = async () => {
   $('#alldeposited').text(totaldeposited.toFixed(2));
   const userpayout = (invester.payoutSum.toNumber() / 1000000);
   $('#userpayout').text(userpayout.toFixed(2));  
- if ( parseFloat($('#alldeposited').text()) >  parseFloat($('#userpayout').text()) ){
+/* if ( parseFloat($('#alldeposited').text()) >  parseFloat($('#userpayout').text()) ){
 
   const checkloss = parseFloat(
       parseFloat($('#alldeposited').text()) -
@@ -480,7 +480,7 @@ const accountData = async () => {
   
   } else{
   const checkloss = 0;
-  }	  
+  } */	  
 	  
 /*invested = await getDeposit();
     let profit, totalProfit, halfProfit;
@@ -510,12 +510,12 @@ const accountData = async () => {
       siteLoading = false;
       runCounter('#actualCapital', totaldeposited);
       runCounter('#withdrawableAmount', userpayout);
-      runCounter('#withdrawableInterest', checkloss);
+      runCounter('#withdrawableInterest', userpayout);
       runCounter('#totalWithdrawable', totalProfit);
     } else {
       $('#actualCapital').val(totaldeposited);
       $('#withdrawableAmount').val(userpayout);
-      $('#withdrawableInterest').val(checkloss);
+      $('#withdrawableInterest').val(userpayout);
       $('#totalWithdrawable').val(totalProfit);
     }
     $('.deduction').text(halfProfit);
