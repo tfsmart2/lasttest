@@ -460,14 +460,74 @@ const accountData = async () => {
     }
     $('#address').text(currentAccount);
 
-    getUserStats();
+   // getUserStats();
   //  secondsToDhms();
 
-
+  
+	let invester = await contract.players(currentAccount).call();  
+	  
+	const totaldeposited = (invester.playerdeposit.toNumber() / 1000000);
+  $('#alldeposited').text(totaldeposited.toFixed(2));
+  const userpayout = (invester.payoutSum.toNumber() / 1000000);
+  $('#userpayout').text(userpayout.toFixed(2));  
+	  
+	  
+/*invested = await getDeposit();
+    let profit, totalProfit, halfProfit;
+    if (parseInt(invested) > 0) {
+      profit = await getProfit(contract);
+      totalProfit = (profit.toNumber() / 1000000).toFixed(6);
+      halfProfit = (profit.toNumber() / 2000000).toFixed(6);
+      statstotalprof = (profit.toNumber() / 1000000).toFixed(6);
+      $('#statstotalprof').text(statstotalprof);
+      $('#refererAddress').val('You Already have a Sponsor');
+      $('#refererAddress').prop('disabled', true);
+      $('#accountRef').val('https://tronflowplus.net/?ref=' + currentAccount);
+    } else {
+      if (params.has('ref')) {
+        $('#refererAddress').prop('disabled', true);
+        $('#refererAddress').val(params.get('ref'));
+      } else if ($('#refererAddress').val() == 'You Already have a Sponsor') {
+        $('#refererAddress').prop('disabled', false);
+        $('#refererAddress').val('');
+      }
+      $('#accountRef').val(
+        'You need to invest at least 1000 TRX to activate the referral link.'
+      );
+      invested = totalProfit = halfProfit = 0;
+    } */
+    if (siteLoading) {
+      siteLoading = false;
+      runCounter('#actualCapital', totaldeposited);
+      runCounter('#withdrawableAmount', halfProfit);
+      runCounter('#withdrawableInterest', halfProfit);
+      runCounter('#totalWithdrawable', totalProfit);
+    } else {
+      $('#actualCapital').val(totaldeposited);
+      $('#withdrawableAmount').val(halfProfit);
+      $('#withdrawableInterest').val(halfProfit);
+      $('#totalWithdrawable').val(totalProfit);
+    }
+    $('.deduction').text(halfProfit);
+    $('#invested').text(totalProfit);
+    $('#withdrawed').text(totalProfit);
+    $('#withdrawal').text(((totalProfit * 2) / 10).toFixed(6) );
+    $('#insur').text((totalProfit / 10).toFixed(6));
+    $('#reinvest-new-balance').text(
+      parseFloat(
+        parseFloat($('#actualCapital').val()) + parseFloat(halfProfit)
+      ).toFixed(6)
+    );
+    $('#withdrawal-new-balance').text(
+      parseFloat(
+        parseFloat($('#actualCapital').val()) - parseFloat(halfProfit) + parseFloat(totalProfit / 5)
+      ).toFixed(6)
+    );
+    
 
     
 
-    invested = await getDeposit();
+ 
    
     
     
