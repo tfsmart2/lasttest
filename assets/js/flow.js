@@ -423,7 +423,7 @@ const getUserStats = async () => {
 
   
   
-alert(totaldeposited);
+
 
 /*
   
