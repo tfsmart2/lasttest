@@ -425,7 +425,7 @@ const getUserStats = async () => {
   
 
 
-
+/*
   
   if ( parseFloat($('#alldeposited').text()) >  parseFloat($('#userpayout').text()) ){
 
@@ -442,7 +442,7 @@ const getUserStats = async () => {
   
   
   
-  
+ */ 
 
   
 };
