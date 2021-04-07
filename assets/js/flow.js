@@ -474,7 +474,7 @@ const accountData = async () => {
 	  if (parseInt(loss) < 0 ){
 	  const loss1 = '0';
 	  } else {
-	   const loss1 = loss;
+	   const loss1 = '1';
 	  }
 	  
 /* if ( parseFloat($('#alldeposited').text()) >  parseFloat($('#userpayout').text()) ){
