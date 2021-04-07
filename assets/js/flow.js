@@ -471,7 +471,7 @@ const accountData = async () => {
   const userpayout = (invester.payoutSum.toNumber() / 1000000);
   $('#userpayout').text(userpayout.toFixed(2)); 
   const loss = totaldeposited - userpayout;
-	  if (parseInt(loss) > 0 ){
+	  if (parseInt(loss) < 0 ){
 	  const loss1 = '0';
 	  } else {
 	   const loss1 = loss;
